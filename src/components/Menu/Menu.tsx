@@ -8,5 +8,4 @@ const Sld = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  background-color: yellow;
 `;

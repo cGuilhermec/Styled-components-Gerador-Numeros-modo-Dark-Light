@@ -1,14 +1,15 @@
 import styled from "styled-components";
+import { ButtonProps } from "../types";
 
-export default function Ball({ children }: any) {
-  return <BallSld>{children}</BallSld>;
+export default function Ball({ children, action }: ButtonProps) {
+  return <BallSld onClick={action}>{children}</BallSld>;
 }
 
 export const BallSld = styled.button`
   display: flex;
 
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: ${({ theme }) => theme.button.bg};
 
   border: none;
   border-radius: 20px;
@@ -18,13 +19,13 @@ export const BallSld = styled.button`
   font-size: 18px;
   font-weight: bold;
 
-  color: #fff;
+  color: ${({ theme }) => theme.button.text};
   margin-left: 5px;
 
   cursor: pointer;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: ${({ theme }) => theme.button.bgHover};
   }
 
   transition: background-color 0.3s ease;
